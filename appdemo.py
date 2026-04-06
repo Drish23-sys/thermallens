@@ -474,7 +474,7 @@ def draw_map(label_map, bounds, ndvi):
     cb.set_label("NDVI  (higher = more vegetation)", fontsize=8, color="#64748B")
     cb.ax.tick_params(labelsize=8, colors="#64748B")
 
-    fig.suptitle("Delhi NCT  —  Urban Heat Island Analysis"),
+    fig.suptitle("Delhi NCT  —  Urban Heat Island Analysis",
                  fontsize=11, fontweight="600", color="#64748B", y=1.01)
     plt.tight_layout()
     return fig
