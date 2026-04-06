@@ -268,7 +268,7 @@ DESC    = [
     "This area has significantly elevated surface temperatures. Dense buildings, roads, concrete, and industrial activity trap heat and raise temperatures well above the city average.",
 ]
 DELHI   = {"lon_min":76.84,"lon_max":77.35,"lat_min":28.40,"lat_max":28.88}
-MAX_DIM = 600
+MAX_DIM = 400
 
 # ═══════════════════════════════════════════════════════════
 # MODEL
@@ -281,7 +281,7 @@ def load_model():
     for f in ["/tmp/scaler_download.pkl"]:
         if os.path.exists(f):
             os.remove(f)
-            
+
     HF_BASE = "https://huggingface.co/Drishtanta23/thermallens_delhi_uhi/resolve/main"
     files = {
         "Delhi_UHI_XGB_Stage5.pkl": f"{HF_BASE}/Delhi_UHI_XGB_Stage5.pkl",
