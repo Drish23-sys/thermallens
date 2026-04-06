@@ -276,7 +276,12 @@ MAX_DIM = 600
 @st.cache_resource(show_spinner=False)
 def load_model():
     import requests, pickle
-
+    
+    # Force re-download scaler with correct version
+    for f in ["/tmp/scaler_download.pkl"]:
+        if os.path.exists(f):
+            os.remove(f)
+            
     HF_BASE = "https://huggingface.co/Drishtanta23/thermallens_delhi_uhi/resolve/main"
     files = {
         "Delhi_UHI_XGB_Stage5.pkl": f"{HF_BASE}/Delhi_UHI_XGB_Stage5.pkl",
