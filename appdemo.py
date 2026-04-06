@@ -286,7 +286,7 @@ def load_model():
     for fname, url in files.items():
         local = f"/tmp/{fname}"
         if not os.path.exists(local):
-            st.toast(f"Downloading {fname}...")
+            print(f"Downloading {fname}...")
             with requests.get(url, stream=True) as r:
                 r.raise_for_status()
                 with open(local, "wb") as f:
